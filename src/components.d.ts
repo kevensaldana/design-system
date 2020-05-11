@@ -5,22 +5,29 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { Color, } from "./components/atoms/k-button/k-button";
 export namespace Components {
     interface KButton {
-    }
-    interface MyComponent {
         /**
-          * The first name
+          * The color to use from your application's color palette. Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`.
          */
-        "first": string;
+        "color"?: Color;
         /**
-          * The last name
+          * If `true`, the user cannot interact with the button.
          */
-        "last": string;
+        "disabled": boolean;
         /**
-          * The middle name
+          * Set to `"block"` for a full-width button or to `"full"` for a full-width button without left and right borders.
          */
-        "middle": string;
+        "expand"?: "full" | "block";
+        /**
+          * Contains a URL or a URL fragment that the hyperlink points to. If this property is set, an anchor tag will be rendered.
+         */
+        "href": string | undefined;
+        /**
+          * Specifies where to display the linked URL. Only applies when an `href` is provided. Special keywords: `"_blank"`, `"_self"`, `"_parent"`, `"_top"`.
+         */
+        "target": string | undefined;
     }
 }
 declare global {
@@ -30,37 +37,35 @@ declare global {
         prototype: HTMLKButtonElement;
         new (): HTMLKButtonElement;
     };
-    interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
-    }
-    var HTMLMyComponentElement: {
-        prototype: HTMLMyComponentElement;
-        new (): HTMLMyComponentElement;
-    };
     interface HTMLElementTagNameMap {
         "k-button": HTMLKButtonElement;
-        "my-component": HTMLMyComponentElement;
     }
 }
 declare namespace LocalJSX {
     interface KButton {
-    }
-    interface MyComponent {
         /**
-          * The first name
+          * The color to use from your application's color palette. Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`.
          */
-        "first"?: string;
+        "color"?: Color;
         /**
-          * The last name
+          * If `true`, the user cannot interact with the button.
          */
-        "last"?: string;
+        "disabled"?: boolean;
         /**
-          * The middle name
+          * Set to `"block"` for a full-width button or to `"full"` for a full-width button without left and right borders.
          */
-        "middle"?: string;
+        "expand"?: "full" | "block";
+        /**
+          * Contains a URL or a URL fragment that the hyperlink points to. If this property is set, an anchor tag will be rendered.
+         */
+        "href"?: string | undefined;
+        /**
+          * Specifies where to display the linked URL. Only applies when an `href` is provided. Special keywords: `"_blank"`, `"_self"`, `"_parent"`, `"_top"`.
+         */
+        "target"?: string | undefined;
     }
     interface IntrinsicElements {
         "k-button": KButton;
-        "my-component": MyComponent;
     }
 }
 export { LocalJSX as JSX };
@@ -68,7 +73,6 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "k-button": LocalJSX.KButton & JSXBase.HTMLAttributes<HTMLKButtonElement>;
-            "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
         }
     }
 }

@@ -1,0 +1,21 @@
+/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwind screens;
+
+/*:root {*/
+/*    --transparent: transparent;*/
+/*    --black: black;*/
+/*    --primary: #f1ca3c;*/
+/*    --primary_variant: #ffe2a9;*/
+/*    --on_primary: white;*/
+/*    --background: #0d1117;*/
+/*    --on_background: rgba(255, 255, 255, 0.8);*/
+/*    --surface: #171c23;*/
+/*    --on_surface: white;*/
+/*    --red: #b03c28;*/
+/*    --green: #25e1a8;*/
+/*    --blue: #1e5aff;*/
+/*    --yellow: #ffdd00;*/
+/*}*/
