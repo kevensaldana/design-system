@@ -4,18 +4,34 @@
 @tailwind utilities;
 @tailwind screens;
 
-/*:root {*/
-/*    --transparent: transparent;*/
-/*    --black: black;*/
-/*    --primary: #f1ca3c;*/
-/*    --primary_variant: #ffe2a9;*/
-/*    --on_primary: white;*/
-/*    --background: #0d1117;*/
-/*    --on_background: rgba(255, 255, 255, 0.8);*/
-/*    --surface: #171c23;*/
-/*    --on_surface: white;*/
-/*    --red: #b03c28;*/
-/*    --green: #25e1a8;*/
-/*    --blue: #1e5aff;*/
-/*    --yellow: #ffdd00;*/
-/*}*/
+html {
+    --primary-color: #F2CF41;
+    --accent-color: #02C39A;
+    --success-color: #0EAD69;
+    --danger-color: #D34867;
+    --warning-color: #FFCD5C;
+    --info-color: #10AFFB;
+
+    --z0-color:#0D1117;
+    --z1-color:#11151D;
+    --z2-color:#131821;
+    --z3-color:#141A24;
+    --text-secondary-color:#9E9E9E;
+    --text-primary-color:#e1e2e2;
+    /*body*/
+    --background: var(--z0-color);
+    /*--z0-color:#f9f5f0;*/
+    /*--z1-color:#fcfbf9;*/
+    /*--z2-color:#cbcbcb;*/
+    /*--z3-color:#f3ebdd;*/
+    /*--z4-color:#828282;*/
+    /*--z5-color:#000000;*/
+}
+
+body {
+    margin: 40px;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    color: var(--text-primary-color);
+
+    background-color: var(--background);
+}

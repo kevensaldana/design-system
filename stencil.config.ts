@@ -3,17 +3,15 @@ import {postcss} from "@stencil/postcss";
 import tailwindcss from "tailwindcss";
 import autoprefixer from 'autoprefixer';
 import cssnano from 'cssnano';
-import purgecss from '@fullhuman/postcss-purgecss';
 
-const purge = purgecss({
-  content: ['./src/**/*.tsx', './src/index.html'],
-  defaultExtractor: content => content.match(/[A-Za-z0-9-_:/]+/g) || []
-});
+// const purge = purgecss({
+//   content: ['./src/**/*.tsx', './src/index.html'],
+//   defaultExtractor: content => content.match(/[A-Za-z0-9-_:/]+/g) || []
+// });
 
 const pluginsPostCss = [
   autoprefixer(),
   tailwindcss('./tailwind.config.js'),
-  purge,
   cssnano
 ];
 

@@ -9,7 +9,7 @@ import { Color, } from "./components/atoms/k-button/k-button";
 export namespace Components {
     interface KButton {
         /**
-          * The color to use from your application's color palette. Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`.
+          * The color to use from your application's color palette. Default options are: `"primary"`, `"secondary"`, `"success"`, `"warning"`, `"danger"`.
          */
         "color"?: Color;
         /**
@@ -19,15 +19,23 @@ export namespace Components {
         /**
           * Set to `"block"` for a full-width button or to `"full"` for a full-width button without left and right borders.
          */
-        "expand"?: "full" | "block";
+        "expand"?: "block";
         /**
           * Contains a URL or a URL fragment that the hyperlink points to. If this property is set, an anchor tag will be rendered.
          */
         "href": string | undefined;
         /**
+          * Specifies the relationship of the target object to the link object. The value is a space-separated list of [link types](https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types).
+         */
+        "rel": string | undefined;
+        /**
           * Specifies where to display the linked URL. Only applies when an `href` is provided. Special keywords: `"_blank"`, `"_self"`, `"_parent"`, `"_top"`.
          */
         "target": string | undefined;
+        /**
+          * The type of the button.
+         */
+        "type": "submit" | "reset" | "button";
     }
 }
 declare global {
@@ -44,7 +52,7 @@ declare global {
 declare namespace LocalJSX {
     interface KButton {
         /**
-          * The color to use from your application's color palette. Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`.
+          * The color to use from your application's color palette. Default options are: `"primary"`, `"secondary"`, `"success"`, `"warning"`, `"danger"`.
          */
         "color"?: Color;
         /**
@@ -54,15 +62,31 @@ declare namespace LocalJSX {
         /**
           * Set to `"block"` for a full-width button or to `"full"` for a full-width button without left and right borders.
          */
-        "expand"?: "full" | "block";
+        "expand"?: "block";
         /**
           * Contains a URL or a URL fragment that the hyperlink points to. If this property is set, an anchor tag will be rendered.
          */
         "href"?: string | undefined;
         /**
+          * Emitted when the button loses focus.
+         */
+        "onKBlur"?: (event: CustomEvent<void>) => void;
+        /**
+          * Emitted when the button has focus.
+         */
+        "onKFocus"?: (event: CustomEvent<void>) => void;
+        /**
+          * Specifies the relationship of the target object to the link object. The value is a space-separated list of [link types](https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types).
+         */
+        "rel"?: string | undefined;
+        /**
           * Specifies where to display the linked URL. Only applies when an `href` is provided. Special keywords: `"_blank"`, `"_self"`, `"_parent"`, `"_top"`.
          */
         "target"?: string | undefined;
+        /**
+          * The type of the button.
+         */
+        "type"?: "submit" | "reset" | "button";
     }
     interface IntrinsicElements {
         "k-button": KButton;

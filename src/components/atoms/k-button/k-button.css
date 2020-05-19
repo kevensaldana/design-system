@@ -1,3 +1,39 @@
 :host {
+  --button-color-base: var(--primary-color);
+  --button-color-contrast: var(--z0-color);
+  --button-color-tint: var(--primary-color);
+  display: inline-block;
+  width: auto;
+  text-align: center;
+  text-decoration: none;
+  text-overflow: ellipsis;
+
+  white-space: nowrap;
+  color: var(--button-color-contrast);
+  background-color: var(--button-color-base);
+  user-select: none;
+  vertical-align: top;
+  vertical-align: -webkit-baseline-middle;
+  pointer-events: auto;
+  font-kerning: none;
+}
+
+:host(:hover) {
+  background-color: var(--button-color-tint);
+}
+
+.button__native{
   display: block;
+  position: relative;
+  border: none;
+  background: none;
+  width: 100%;
+  height: 100%;
+  outline: none;
+  line-height: 1;
+  contain: layout style;
+  cursor: pointer;
+  z-index: 0;
+  box-sizing: border-box;
+  appearance: none;
 }
