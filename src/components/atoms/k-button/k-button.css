@@ -1,15 +1,17 @@
 :host {
-  --button-color-base: var(--primary-color);
-  --button-color-contrast: var(--z0-color);
-  --button-color-tint: var(--primary-color);
+  --padding-y: 12px;
+  --padding-x: 26px;
+  --border-radius: 3px;
+  --alpha-tint: 0.9;
+  --font-size: 16px;
   display: inline-block;
   width: auto;
   text-align: center;
+  font-size: var(--font-size);
   text-decoration: none;
   text-overflow: ellipsis;
-
+  border-radius: var(--border-radius);
   white-space: nowrap;
-  color: var(--button-color-contrast);
   background-color: var(--button-color-base);
   user-select: none;
   vertical-align: top;
@@ -18,11 +20,55 @@
   font-kerning: none;
 }
 
+:host(.button--disabled) {
+  cursor: default;
+  opacity: .5;
+  pointer-events: none;
+}
+
+:host(.button--primary){
+  --button-color-base: var(--primary-color);
+  --button-color-contrast: var(--z0-color);
+  --button-color-tint: hsla(var(--primary-color-hsl), var(--alpha-tint));
+}
+
+:host(.button--danger){
+  --button-color-base: var(--danger-color);
+  --button-color-contrast: var(--z0-color);
+  --button-color-tint: hsla(var(--danger-color-hsl), var(--alpha-tint));
+}
+
+:host(.button--accent){
+  --button-color-base: var(--accent-color);
+  --button-color-contrast: var(--z0-color);
+  --button-color-tint: hsla(var(--accent-color-hsl), var(--alpha-tint));
+}
+
+:host(.button--success){
+  --button-color-base: var(--success-color);
+  --button-color-contrast: var(--z0-color);
+  --button-color-tint: hsla(var(--success-color-hsl), var(--alpha-tint));
+}
+
+:host(.button--info){
+  --button-color-base: var(--info-color);
+  --button-color-contrast: var(--z0-color);
+  --button-color-tint: hsla(var(--info-color-hsl), var(--alpha-tint));
+}
+
+:host(.button--warning){
+  --button-color-base: var(--warning-color);
+  --button-color-contrast: var(--z0-color);
+  --button-color-tint: hsla(var(--warning-color-hsl), var(--alpha-tint));
+}
+
 :host(:hover) {
   background-color: var(--button-color-tint);
 }
 
 .button__native{
+  padding: var(--padding-y) var(--padding-x);
+  color: var(--button-color-contrast);
   display: block;
   position: relative;
   border: none;
@@ -36,4 +82,6 @@
   z-index: 0;
   box-sizing: border-box;
   appearance: none;
+  font-size: inherit;
+  font-weight: inherit;
 }

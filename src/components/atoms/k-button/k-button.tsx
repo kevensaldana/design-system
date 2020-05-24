@@ -1,7 +1,7 @@
 import {Component, ComponentInterface, Host, h, Element, Prop, Event, EventEmitter} from '@stencil/core';
 import {hasShadowDom} from "../../../utils/helpers";
 
-export type PredefinedColors = 'primary' | 'secondary' | 'tertiary' | 'success' | 'warning' | 'danger' | 'light' | 'medium' | 'dark';
+export type PredefinedColors = 'primary' | 'accent' | 'success' | 'warning' | 'danger' | 'info';
 export type Color = PredefinedColors | string;
 
 @Component({
@@ -39,7 +39,7 @@ export class KButton implements ComponentInterface {
    * The color to use from your application's color palette.
    * Default options are: `"primary"`, `"secondary"`, `"success"`, `"warning"`, `"danger"`.
    */
-  @Prop() color?: Color;
+  @Prop() color?: Color = 'primary';
 
   /**
    * Specifies where to display the linked URL.
@@ -94,7 +94,7 @@ export class KButton implements ComponentInterface {
 
 
   render() {
-    const {  href, disabled, type, rel, target, expand, hasIconOnly } = this;
+    const {  href, disabled, type, rel, target, expand, hasIconOnly, color } = this;
     const TagType = href === undefined ? 'button' : 'a' as any;
     const attrs = (TagType === 'button')
         ? { type }
@@ -109,6 +109,7 @@ export class KButton implements ComponentInterface {
             aria-disabled={disabled ? 'true' : null}
             class={{
               [`button--${expand}`]: expand !== undefined,
+              [`button--${color}`]: color !== undefined,
               'button--has-icon-only': hasIconOnly,
               'button--disabled': disabled,
               'button': true

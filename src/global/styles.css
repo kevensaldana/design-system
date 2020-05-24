@@ -1,3 +1,5 @@
+@import 'font.css';
+
 /* You can add global styles to this file, and also import other style files */
 @tailwind base;
 @tailwind components;
@@ -5,12 +7,18 @@
 @tailwind screens;
 
 html {
-    --primary-color: #F2CF41;
-    --accent-color: #02C39A;
-    --success-color: #0EAD69;
-    --danger-color: #D34867;
-    --warning-color: #FFCD5C;
-    --info-color: #10AFFB;
+    --primary-color-hsl: 48, 87%, 60%;
+    --primary-color: hsl(var(--primary-color-hsl));
+    --accent-color-hsl: 167, 98%, 39%;
+    --accent-color: hsl(var(--accent-color-hsl));
+    --success-color-hsl: 154, 85%, 37%;
+    --success-color: hsl(var(--success-color-hsl));
+    --danger-color-hsl: 347, 61%, 55%;
+    --danger-color: hsl(var(--danger-color-hsl));
+    --warning-color-hsl: 42, 100%, 68%;
+    --warning-color: hsl(var(--warning-color-hsl));
+    --info-color-hsl: 199, 97%, 52%;
+    --info-color: hsl(var(--info-color-hsl));
 
     --z0-color:#0D1117;
     --z1-color:#11151D;
@@ -29,9 +37,69 @@ html {
 }
 
 body {
-    margin: 40px;
-    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
     color: var(--text-primary-color);
-
     background-color: var(--background);
+    @apply font-sans;
 }
+
+
+::selection {
+    background-color: var(--accent-color); /* fallback for old browsers */
+    color: black;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    @apply font-serif leading-tight font-semibold mb-6;
+}
+h1 {
+    @apply text-4xl ;
+}
+h2 {
+    @apply text-3xl;
+}
+h3 {
+    @apply text-2xl;
+}
+h4 {
+    @apply text-xl;
+}
+
+@screen lg {
+    h1,
+    h2,
+    h3,
+    h4 {
+        @apply mb-4;
+    }
+}
+ul {
+    @apply list-disc list-outside pl-5;
+}
+ol {
+    @apply list-decimal list-outside pl-5;
+}
+table {
+    @apply table-auto mb-8;
+}
+td,
+th {
+    @apply border px-4 py-2;
+}
+p {
+    @apply my-2;
+}
+a:hover {
+    @apply text-primary;
+}
+blockquote {
+    @apply pl-6 leading-normal;
+    border-left: 3px solid var(--primary-color);
+}
+
+

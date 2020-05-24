@@ -12,6 +12,18 @@ module.exports = {
       lg: "1250px",
       xl: "1530px",
     },
+    fontFamily: {
+      sans: ["Poppins", '"Helvetica Neue"'],
+      serif: ["Georgia", "serif"],
+      mono: [
+        "Menlo",
+        "Monaco",
+        "Consolas",
+        '"Liberation Mono"',
+        '"Courier New"',
+        "monospace",
+      ],
+    },
     colors: {
       transparent: 'transparent',
       current: 'currentColor',
