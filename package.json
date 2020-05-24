@@ -1,6 +1,6 @@
 {
   "name": "k-design-system",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Design System for personal projects",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -12,7 +12,8 @@
   "unpkg": "dist/design-system/design-system.js",
   "files": [
     "dist/",
-    "loader/"
+    "loader/",
+    "./tailwind.config.js"
   ],
   "scripts": {
     "build": "npm run clean && stencil build --prod --docs",

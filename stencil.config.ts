@@ -34,6 +34,9 @@ export const config: Config = {
         {
           src: 'assets',
           dest: '../assets'
+        },
+        {
+          src: '../tailwind.config.js'
         }
       ]
     },
