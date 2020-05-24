@@ -19,11 +19,3 @@ jobs:
         run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.PASS_NPM}}
-      - name: NPM GITHUB publish
-        uses: actions/setup-node@v1
-      - run: echo "//npm.pkg.github.com/:_authToken=$NODE_AUTH_TOKEN" > .npmrc
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.TOKEN}}
-      - run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.TOKEN}}
