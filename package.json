@@ -1,7 +1,14 @@
 {
   "name": "k-design-system",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Design System for personal projects",
+  "author": "Keven <keven.sa17@gmail.com> (https://kevensaldana.com)",
+  "repository": "kevensaldana/design-system",
+  "keywords": [
+    "webcomponents",
+    "stenciljs",
+    "tailwindcss"
+  ],
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "es2015": "dist/esm/index.mjs",
