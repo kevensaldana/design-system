@@ -33,7 +33,7 @@ module.exports = {
       danger: "var(--danger-color)",
       warning: "var(--warning-color)",
       info: "var(--info-color)",
-      text:{
+      content:{
         'primary': 'var(--text-primary-color)',
         'secondary': 'var(--text-secondary-color)'
       },
